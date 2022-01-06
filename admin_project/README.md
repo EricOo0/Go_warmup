@@ -14,6 +14,6 @@
 数据库 gorm  
 配置管理 viper  
 web后台 gin  
-api文档生成 swagger
-图像验证码生成 base64captcha
-加密 md5
+api文档生成 swagger  
+图像验证码生成 base64captcha  
+加密 md5  
