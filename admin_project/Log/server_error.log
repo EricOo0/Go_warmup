@@ -1,0 +1,10 @@
+{"level":"ERROR","ts":"2022-01-05 13:44:18","file":"core/captcha.go:16","msg":"creat captcha failed"}
+{"level":"ERROR","ts":"2022-01-05 13:47:04","file":"core/captcha.go:16","msg":"creat captcha failed"}
+{"level":"ERROR","ts":"2022-01-05 13:47:52","file":"core/captcha.go:16","msg":"creat captcha failed"}
+{"level":"ERROR","ts":"2022-01-05 13:49:49","file":"core/captcha.go:19","msg":"creat captcha failed"}
+{"level":"ERROR","ts":"2022-01-06 15:01:32","file":"core/viper.go:19","msg":"Fatal error config file:","error":"Config File \"config\" Not Found in \"[]\""}
+{"level":"ERROR","ts":"2022-01-06 15:05:29","file":"core/viper.go:19","msg":"Fatal error config file:","error":"Config File \"config.ymal\" Not Found in \"[]\""}
+{"level":"ERROR","ts":"2022-01-06 15:05:40","file":"core/viper.go:19","msg":"Fatal error config file:","error":"Config File \"config.yaml\" Not Found in \"[]\""}
+{"level":"ERROR","ts":"2022-01-06 15:07:28","file":"core/viper.go:19","msg":"Fatal error config file:","error":"Config File \"../config.yaml\" Not Found in \"[]\""}
+{"level":"ERROR","ts":"2022-01-06 15:07:58","file":"core/viper.go:20","msg":"Fatal error config file:","error":"Config File \"config\" Not Found in \"[/Users/weizhifeng/Desktop/GO_warmup]\""}
+{"level":"ERROR","ts":"2022-01-06 15:14:48","file":"admin_project/main.go:55","msg":"server is fail!"}

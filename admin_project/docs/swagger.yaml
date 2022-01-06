@@ -1,0 +1,103 @@
+definitions:
+  sysRequest.Login:
+    properties:
+      b64s:
+        type: string
+      id:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  sysRequest.Register:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+paths:
+  /captcha:
+    get:
+      description: 请求base64编码的图像验证码
+      responses:
+        "200":
+          description: '{"success":true,"id":id,"b64s":base64编码的图像}'
+          schema:
+            type: string
+      tags:
+      - 共有路由
+  /login:
+    post:
+      description: 提交登录信息
+      parameters:
+      - description: 上传登录信息和验证码
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/sysRequest.Login'
+      responses:
+        "200":
+          description: '{"success":true,"msg":"登录成功","token":"aaa.bbb.ccc"}'
+          schema:
+            type: string
+      tags:
+      - 共有路由
+  /ping:
+    get:
+      description: get string by ID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+      summary: Show a account
+      tags:
+      - Example API
+  /register:
+    post:
+      description: 提交注册用户信息
+      parameters:
+      - description: 注册用户账户,密码
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/sysRequest.Register'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"msg":"注册成功"}'
+          schema:
+            type: string
+      tags:
+      - 共有路由
+  /userinfo:
+    get:
+      description: 获取用户信息
+      parameters:
+      - description: 页面需要token鉴权，header带上Authorization字段
+        in: header
+        name: data
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true,"msg":"登录成功",}'
+          schema:
+            type: string
+      tags:
+      - 私有路由
+swagger: "2.0"
