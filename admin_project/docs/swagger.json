@@ -29,6 +29,49 @@
                 }
             }
         },
+        "/changepassword": {
+            "post": {
+                "description": "修改用户密码",
+                "tags": [
+                    "私有路由"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "页面需要token鉴权，header带上Authorization字段",
+                        "name": "data",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "要修改的username",
+                        "name": "username",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "新的密码",
+                        "name": "password",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"msg\":\"修改成功\",err:\"error reson\",}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/deleteUser": {
             "post": {
                 "description": "获取用户信息",
@@ -42,11 +85,20 @@
                         "name": "data",
                         "in": "header",
                         "required": true
+                    },
+                    {
+                        "description": "要删除的username",
+                        "name": "username",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\":true,\"msg\":\"登录成功\",}",
+                        "description": "{\"success\":true,\"msg\":\"删除成功\",err:\"error reson\",}",
                         "schema": {
                             "type": "string"
                         }

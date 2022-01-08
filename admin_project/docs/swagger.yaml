@@ -37,6 +37,34 @@ paths:
             type: string
       tags:
       - 共有路由
+  /changepassword:
+    post:
+      description: 修改用户密码
+      parameters:
+      - description: 页面需要token鉴权，header带上Authorization字段
+        in: header
+        name: data
+        required: true
+        type: string
+      - description: 要修改的username
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: 新的密码
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: '{"success":true,"msg":"修改成功",err:"error reson",}'
+          schema:
+            type: string
+      tags:
+      - 私有路由
   /deleteUser:
     post:
       description: 获取用户信息
@@ -46,9 +74,15 @@ paths:
         name: data
         required: true
         type: string
+      - description: 要删除的username
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
       responses:
         "200":
-          description: '{"success":true,"msg":"登录成功",}'
+          description: '{"success":true,"msg":"删除成功",err:"error reson",}'
           schema:
             type: string
       tags:

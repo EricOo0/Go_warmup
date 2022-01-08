@@ -102,3 +102,5 @@
 {"level":"DEBUG","ts":"2022-01-08 13:58:02","file":"admin_project/main.go:24","msg":"server runing"}
 {"level":"DEBUG","ts":"2022-01-08 14:04:43","file":"admin_project/main.go:24","msg":"server runing"}
 {"level":"DEBUG","ts":"2022-01-08 14:19:22","file":"admin_project/main.go:24","msg":"server runing"}
+{"level":"DEBUG","ts":"2022-01-08 14:27:53","file":"admin_project/main.go:24","msg":"server runing"}
+{"level":"DEBUG","ts":"2022-01-08 14:28:51","file":"admin_project/main.go:24","msg":"server runing"}
