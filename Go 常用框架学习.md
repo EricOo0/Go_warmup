@@ -994,6 +994,10 @@ func main() {
 
 ​	JSON Web令牌（JWT）作为令牌系统而不是在每次请求时都发送用户名和密码，因此比其他方法（如基本身份验证）具有固有的优势。
 
+​	格式：aaa.bbb.ccc
+
+​	aaa是header，一般由协议决定；bbb是payload，存储一些必要信息，jwt中的claims部分；ccc是用密钥对header+payload加密了的部分。
+
 Signature部分的生成需要base64编码之后的Header,base64编码之后的Payload,密钥（secret）--服务端唯一,Header需要指定签字的算法。
 
 ```

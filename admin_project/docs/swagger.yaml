@@ -37,6 +37,22 @@ paths:
             type: string
       tags:
       - 共有路由
+  /deleteUser:
+    post:
+      description: 获取用户信息
+      parameters:
+      - description: 页面需要token鉴权，header带上Authorization字段
+        in: header
+        name: data
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true,"msg":"登录成功",}'
+          schema:
+            type: string
+      tags:
+      - 私有路由
   /login:
     post:
       description: 提交登录信息
@@ -95,7 +111,7 @@ paths:
         type: string
       responses:
         "200":
-          description: '{"success":true,"msg":"登录成功",}'
+          description: '{"success":true,"msg":"hello:user",}'
           schema:
             type: string
       tags:

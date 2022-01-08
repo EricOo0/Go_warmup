@@ -15,5 +15,28 @@
 配置管理 viper  
 web后台 gin  
 api文档生成 swagger  
+
+鉴权：jwt
+
 图像验证码生成 base64captcha  
 加密 md5  
+
+已有接口：
+
+公共：
+
+​	/register：[post] 注册用户并存储到数据库，后台会先验证前端给过来的用户名密码是否符合要求且验证用户是否存在
+
+​	/captcha：[get] 获取图形验证码的api，后台会给前端返回base64编码后的图形验证码
+
+​	/login：[post] 用户登录功能，后台先判断验证码是否正确，然后判断账户密码是否正确，成功返回success和一个jwt生成的token，用于身份鉴权
+
+私有：
+
+​	/getuserinfo [get]. 获取用户信息
+
+​	/deleteuser	[post] 删除指定用户信息，需判断用户身份和权限
+
+​	/changepassword [post] 修改密码
+
+评论区功能(未完成)：https://blog.csdn.net/ztchun/article/details/71106117?spm=1035.2023.3001.6557&utm_medium=distribute.pc_relevant_bbs_down.none-task-blog-2~default~OPENSEARCH~default-2.nonecase&depth_1-utm_source=distribute.pc_relevant_bbs_down.none-task-blog-2~default~OPENSEARCH~default-2.nonecase

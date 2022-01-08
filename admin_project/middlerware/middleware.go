@@ -2,14 +2,12 @@ package middlerware
 
 import (
 	"admin_project/global"
-	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
 func Auth(c *gin.Context){
 
 	tokenString := c.GetHeader("Authorization")
-	fmt.Println(tokenString)
 	if tokenString == ""{
 		c.JSON(405,gin.H{
 			"success":false,

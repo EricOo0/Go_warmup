@@ -5,8 +5,8 @@ import (
 	"admin_project/global"
 	"admin_project/middlerware"
 	"admin_project/sysRequest"
-	"crypto/md5"
-	"encoding/hex"
+	"admin_project/util"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
@@ -22,6 +22,7 @@ import (
 func LoginHandler(c *gin.Context){
 	var l sysRequest.Login
 	_ = c.ShouldBindJSON(&l)
+	fmt.Println(l)
 	id := l.Id
 	b64s :=l.B64s
 //	id:=c.PostForm("id")
@@ -37,7 +38,8 @@ func LoginHandler(c *gin.Context){
 	//username := c.PostForm("username")
 	//password := c.PostForm("password")
 	username :=l.Username
-	password :=l.Password
+	//md5 加密
+	password := util.Md5([]byte(l.Password))
 	var user global.User
 	err := global.G_DB.Where("Username = ? And Password = ?",username,password).First(&user).Error
 	if err !=nil{
@@ -83,12 +85,8 @@ func RegisterHandler(c *gin.Context){
 		})
 		return
 	}
-	str :=[]byte(l.Password)
-	w :=md5.New()//初始化一个MD5对象
-	w.Write(str) //str为要加密的字符串
-	tmp := w.Sum(nil) //计算校验和
-	pwd := hex.EncodeToString(tmp)
-	u := &global.User{Username: l.Username,Password: pwd}
+	pwd := util.Md5([]byte(l.Password))
+	u := &global.User{Username: l.Username,Password: pwd,Priv: global.Priv_User}
 	err := global.G_DB.Create(&u).Error
 	if err !=nil{
 		c.JSON(400, gin.H{

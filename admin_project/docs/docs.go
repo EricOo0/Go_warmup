@@ -48,6 +48,31 @@ var doc = `{
                 }
             }
         },
+        "/deleteUser": {
+            "post": {
+                "description": "获取用户信息",
+                "tags": [
+                    "私有路由"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "页面需要token鉴权，header带上Authorization字段",
+                        "name": "data",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"msg\":\"登录成功\",}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/login": {
             "post": {
                 "description": "提交登录信息",
@@ -139,7 +164,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\":true,\"msg\":\"登录成功\",}",
+                        "description": "{\"success\":true,\"msg\":\"hello:user\",}",
                         "schema": {
                             "type": "string"
                         }

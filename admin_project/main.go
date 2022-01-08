@@ -28,10 +28,10 @@ func main(){
 	global.G_DB = core.Db()
 	global.G_DB.AutoMigrate(&global.User{})
 	db,_ := global.G_DB.DB()
-
+	defer db.Close()
 	//u := User{Password: "test",Username: "test4"}
 	//gDb.Create(&u)
-	defer db.Close()
+
 
 	//admin 服务器启动
 	s := gin.Default()
@@ -45,9 +45,12 @@ func main(){
 
 	//用户路由   访问前需要认证token
 	usrRouter := s.Group("")
+
 	usrRouter.Use(middlerware.Auth)
 	{
 		usrRouter.GET("userinfo", routers.GetinfoHandler)
+		usrRouter.POST("deleteUser", routers.DeleteUserHandler)
+		usrRouter.POST("changepassword", routers.ChangePassword)
 	}
 
 	// 服务启动
