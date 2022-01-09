@@ -39,4 +39,11 @@ api文档生成 swagger
 
 ​	/changepassword [post] 修改密码
 
-评论区功能(未完成)：https://blog.csdn.net/ztchun/article/details/71106117?spm=1035.2023.3001.6557&utm_medium=distribute.pc_relevant_bbs_down.none-task-blog-2~default~OPENSEARCH~default-2.nonecase&depth_1-utm_source=distribute.pc_relevant_bbs_down.none-task-blog-2~default~OPENSEARCH~default-2.nonecase
+
+
+​	/getcomment [get] 获取评论列表 需要带上pagesize和page参数
+
+​	/addcomment [post] 添加评论
+
+​	/deletecomment[post] 删除评论
+

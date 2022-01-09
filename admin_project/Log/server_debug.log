@@ -118,3 +118,4 @@
 {"level":"DEBUG","ts":"2022-01-09 15:52:05","file":"admin_project/main.go:24","msg":"server runing"}
 {"level":"DEBUG","ts":"2022-01-09 15:53:17","file":"admin_project/main.go:24","msg":"server runing"}
 {"level":"DEBUG","ts":"2022-01-09 15:57:26","file":"admin_project/main.go:24","msg":"server runing"}
+{"level":"DEBUG","ts":"2022-01-09 16:06:46","file":"admin_project/main.go:24","msg":"server runing"}

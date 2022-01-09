@@ -1,39 +1,36 @@
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
-[0m[33m[4.525ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
+[0m[33m[4.434ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
-[0m[33m[50.392ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
+[0m[33m[28.951ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/github/Go_warmup/admin_project/main.go:29
-[0m[33m[9.820ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'adminDB' AND table_name = 'users' AND table_type = 'BASE TABLE'
+2022/01/09 16:06:46 [32m/Users/weizhifeng/github/Go_warmup/admin_project/main.go:29
+[0m[33m[4.352ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'adminDB' AND table_name = 'users' AND table_type = 'BASE TABLE'
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
-[0m[33m[3.019ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
+[0m[33m[1.365ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
-[0m[33m[6.811ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
+[0m[33m[1.370ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:205
-[0m[33m[7.647ms] [34;1m[rows:-][0m SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'adminDB' AND table_name = 'users'
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:205
+[0m[33m[7.292ms] [34;1m[rows:-][0m SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'adminDB' AND table_name = 'users'
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
-[0m[33m[0.593ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
+[0m[33m[0.493ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
-[0m[33m[1.619ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
+[0m[33m[0.986ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/github/Go_warmup/admin_project/main.go:29
-[0m[33m[2.686ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'adminDB' AND table_name = 'comments' AND table_type = 'BASE TABLE'
+2022/01/09 16:06:46 [32m/Users/weizhifeng/github/Go_warmup/admin_project/main.go:29
+[0m[33m[2.829ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'adminDB' AND table_name = 'comments' AND table_type = 'BASE TABLE'
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
-[0m[33m[1.268ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:234
+[0m[33m[0.478ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
-[0m[33m[4.802ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:237
+[0m[33m[3.937ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'admindb%' ORDER BY SCHEMA_NAME='admindb' DESC limit 1
 
-2022/01/09 15:57:26 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:205
-[0m[33m[3.977ms] [34;1m[rows:-][0m SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'adminDB' AND table_name = 'comments'
-
-2022/01/09 15:58:43 [32m/Users/weizhifeng/github/Go_warmup/admin_project/routers/sys_comment.go:79
-[0m[33m[70.791ms] [34;1m[rows:0][0m SELECT * FROM `comments` LIMIT 50 OFFSET 50
+2022/01/09 16:06:46 [32m/Users/weizhifeng/go/pkg/mod/gorm.io/driver/mysql@v1.2.2/migrator.go:205
+[0m[33m[2.417ms] [34;1m[rows:-][0m SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'adminDB' AND table_name = 'comments'
