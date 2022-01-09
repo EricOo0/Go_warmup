@@ -34,13 +34,13 @@ var doc = `{
     "paths": {
         "/addcomment": {
             "post": {
-                "description": "删除评论",
+                "description": "增加评论",
                 "tags": [
                     "私有路由"
                 ],
                 "parameters": [
                     {
-                        "description": "有commentid即可",
+                        "description": "含用户名和内容即可",
                         "name": "data",
                         "in": "body",
                         "required": true,
@@ -51,7 +51,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\":true,\"msg\":\"删除成功\",\"err\":\"\"}",
+                        "description": "{\"success\":true,\"msg\":\"添加评论成功\",\"err\":\"\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -145,6 +145,33 @@ var doc = `{
                 "responses": {
                     "200": {
                         "description": "{\"success\":true,\"msg\":\"删除成功\",err:\"error reson\",}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/deletecomment": {
+            "post": {
+                "description": "删除评论",
+                "tags": [
+                    "私有路由"
+                ],
+                "parameters": [
+                    {
+                        "description": "有commentid即可",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/global.Comment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"msg\":\"删除成功\",\"err\":\"\"}",
                         "schema": {
                             "type": "string"
                         }
