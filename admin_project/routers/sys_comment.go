@@ -40,7 +40,7 @@ func AddComment(c *gin.Context){
 //@description 删除评论
 //@Param        data    body    global.Comment     true  "有commentid即可"
 //@Success 200 {string} string "{"success":true,"msg":"删除成功","err":""}"
-//@Router /addcomment [post]
+//@Router /deletecomment [post]
 //@return json
 func DeleteComment(c *gin.Context){
 	var comment global.Comment
