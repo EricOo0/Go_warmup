@@ -26,7 +26,7 @@ func main(){
 	global.G_Viper = core.Viper()
 	//连接数据库
 	global.G_DB = core.Db()
-	global.G_DB.AutoMigrate(&global.User{})
+	global.G_DB.AutoMigrate(&global.User{},&global.Comment{})
 	db,_ := global.G_DB.DB()
 	defer db.Close()
 	//u := User{Password: "test",Username: "test4"}
@@ -42,7 +42,6 @@ func main(){
 	s.GET("/captcha", routers.Captcha)
 	s.POST("/register",routers.RegisterHandler)
 	s.POST("/login", routers.LoginHandler)
-
 	//用户路由   访问前需要认证token
 	usrRouter := s.Group("")
 
@@ -51,6 +50,11 @@ func main(){
 		usrRouter.GET("userinfo", routers.GetinfoHandler)
 		usrRouter.POST("deleteUser", routers.DeleteUserHandler)
 		usrRouter.POST("changepassword", routers.ChangePassword)
+
+
+		s.POST("/addcomment", routers.AddComment)
+		s.POST("/deletecomment", routers.DeleteComment)
+		s.GET("/getcomment", routers.GetComment)
 	}
 
 	// 服务启动

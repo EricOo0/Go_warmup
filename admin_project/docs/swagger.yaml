@@ -1,4 +1,17 @@
 definitions:
+  global.Comment:
+    properties:
+      commentid:
+        type: integer
+      content:
+        type: string
+      creattime:
+        type: string
+      name:
+        type: string
+      updatetime:
+        type: string
+    type: object
   sysRequest.Login:
     properties:
       b64s:
@@ -9,6 +22,15 @@ definitions:
         type: string
       username:
         type: string
+    type: object
+  sysRequest.PageInfo:
+    properties:
+      page:
+        description: 页码
+        type: integer
+      pageSize:
+        description: 每页大小
+        type: integer
     type: object
   sysRequest.Register:
     properties:
@@ -27,6 +49,23 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: http://swagger.io/terms/
 paths:
+  /addcomment:
+    post:
+      description: 删除评论
+      parameters:
+      - description: 有commentid即可
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/global.Comment'
+      responses:
+        "200":
+          description: '{"success":true,"msg":"删除成功","err":""}'
+          schema:
+            type: string
+      tags:
+      - 私有路由
   /captcha:
     get:
       description: 请求base64编码的图像验证码
@@ -83,6 +122,23 @@ paths:
       responses:
         "200":
           description: '{"success":true,"msg":"删除成功",err:"error reson",}'
+          schema:
+            type: string
+      tags:
+      - 私有路由
+  /getcomment:
+    get:
+      description: 增加评论
+      parameters:
+      - description: 一页的评论数和页数
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/sysRequest.PageInfo'
+      responses:
+        "200":
+          description: '{"success":true,"commentlist":{{},{}},"msg":"添加评论成功","err":""}'
           schema:
             type: string
       tags:

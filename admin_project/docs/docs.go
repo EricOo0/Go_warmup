@@ -32,6 +32,33 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/addcomment": {
+            "post": {
+                "description": "删除评论",
+                "tags": [
+                    "私有路由"
+                ],
+                "parameters": [
+                    {
+                        "description": "有commentid即可",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/global.Comment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"msg\":\"删除成功\",\"err\":\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/captcha": {
             "get": {
                 "description": "请求base64编码的图像验证码",
@@ -118,6 +145,33 @@ var doc = `{
                 "responses": {
                     "200": {
                         "description": "{\"success\":true,\"msg\":\"删除成功\",err:\"error reson\",}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/getcomment": {
+            "get": {
+                "description": "增加评论",
+                "tags": [
+                    "私有路由"
+                ],
+                "parameters": [
+                    {
+                        "description": "一页的评论数和页数",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/sysRequest.PageInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"commentlist\":{{},{}},\"msg\":\"添加评论成功\",\"err\":\"\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -226,6 +280,26 @@ var doc = `{
         }
     },
     "definitions": {
+        "global.Comment": {
+            "type": "object",
+            "properties": {
+                "commentid": {
+                    "type": "integer"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "creattime": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "updatetime": {
+                    "type": "string"
+                }
+            }
+        },
         "sysRequest.Login": {
             "type": "object",
             "properties": {
@@ -240,6 +314,19 @@ var doc = `{
                 },
                 "username": {
                     "type": "string"
+                }
+            }
+        },
+        "sysRequest.PageInfo": {
+            "type": "object",
+            "properties": {
+                "page": {
+                    "description": "页码",
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "description": "每页大小",
+                    "type": "integer"
                 }
             }
         },

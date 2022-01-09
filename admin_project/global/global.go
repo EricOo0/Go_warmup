@@ -27,6 +27,13 @@ type User struct{
 	CreatedAt       time.Time `gorm:"CreatedAt" json:"creattime"`
 	UpdatedAt       time.Time `gorm:"UpdatedAt" json:"updatetime"`
 }
+type Comment struct {
+	CommentID uint `gorm:"primarykey;unique;not null" json:"commentid"`
+	Name string `gorm:"comment:评论者用户名"  json:"name"`
+	Content string `gorm:"comment:评论内容"  json:"content"`
+	CreatedAt       time.Time `gorm:"CreatedAt" json:"creattime"`
+	UpdatedAt       time.Time `gorm:"UpdatedAt" json:"updatetime"`
+}
 type Config struct{
 	Mysql Mysql
 }
@@ -39,8 +46,8 @@ type Mysql struct {
 	Password string `yaml:"password"`
 	MaxIdleConns int `yaml:"max-idle-conns"`
 	MaxOpenConns int 	`yaml:"max-open-conns"`
-	LogMode int	`yaml:"log-mode"`
-	LogZap bool	`yaml:"log-zap"`
+	LogMode int	`yaml:"logmode"`
+	LogZap bool	`yaml:"logzap"`
 
 }
 func (m *Mysql) Dsn() string{

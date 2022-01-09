@@ -8,3 +8,5 @@
 {"level":"ERROR","ts":"2022-01-06 15:07:28","file":"core/viper.go:19","msg":"Fatal error config file:","error":"Config File \"../config.yaml\" Not Found in \"[]\""}
 {"level":"ERROR","ts":"2022-01-06 15:07:58","file":"core/viper.go:20","msg":"Fatal error config file:","error":"Config File \"config\" Not Found in \"[/Users/weizhifeng/Desktop/GO_warmup]\""}
 {"level":"ERROR","ts":"2022-01-06 15:14:48","file":"admin_project/main.go:55","msg":"server is fail!"}
+{"level":"ERROR","ts":"2022-01-09 15:34:20","file":"core/viper.go:27","msg":"config changed"}
+{"level":"ERROR","ts":"2022-01-09 15:35:13","file":"core/viper.go:27","msg":"config changed"}

@@ -7,5 +7,5 @@ mysql:
   password: weizhifeng10
   max-idle-conns: 0
   max-open-conns: 0
-  log-mode:
-  log-zap: false
+  logmode:
+  logzap: true

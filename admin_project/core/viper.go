@@ -24,6 +24,7 @@ func Viper() *viper.Viper{
 
 	config.WatchConfig()
 	config.OnConfigChange(func(e fsnotify.Event){
+		global.GLog.Error("config changed")
 		err := config.ReadInConfig()
 		if err != nil {
 			global.GLog.Error("Fatal error config file:", zap.Error(err))
