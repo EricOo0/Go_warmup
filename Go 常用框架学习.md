@@ -370,6 +370,10 @@ id, b64s, err := c.Generate()
 store.Verify(id, b64s, true) 
 ```
 
+#### Redis
+
+
+
 #### goroutine控制
 
 https://www.flysnow.org/2017/05/12/go-in-action-go-context.html
@@ -1089,3 +1093,36 @@ func ParseToken(tokenString string) (*jwt.Token, *Claims, error) {
 }
 ```
 
+------
+
+#### 微服务框架
+
+* 什么是微服务？
+
+> 微服务其实是将一个软件系统的功能进行拆分，将每个功能独立设计成一个单独的微服务，各个微服务直接通过RPC进行相互的调用，利用多个轻量级的进程来完成软件系统的功能。
+>
+> 微服务之间可以用不同语言编写，只需要规定好数据的传输规范即可通过网络进行通信。
+>
+> 优点：高度解耦；容易替换和升级；代码复用率高
+>
+> 缺点：微服务之间一般是分布式部署，调用复杂性高；各个服务独立的数据库，cap要求高；运维测试难道加大
+
+* Go Micro微服务框架
+
+>功能：服务发现；负载均衡；消息编码；请求/响应；Async Messaging；可插拔接口
+>
+>server向register注册或反注册自己的状态
+>
+>client从register获得server的信息
+>
+>transport是server监听和与client通信的接口
+>
+>codec 编码方式：json，protobuf
+>
+>Broker是消息发布和订阅的接口。因为服务的节点是不固定的，如果有需要修改所有服务行为的需求，可以使服务订阅某个主题，当有信息发布时，所有的监听服务都会收到信息，根据你的需要做相应的行为。
+>
+>Selector 是客户端级别的负载均衡，当有客户端向服务发送请求时， selector根据不同的算法从Registery中的主机列表，得到可用的Service节点，进行通信。
+>
+>![image-20220120143611000](image/image-20220120143611000.png)
+>
+>![image-20220120153043282](image/image-20220120153043282.png)
