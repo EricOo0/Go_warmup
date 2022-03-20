@@ -99,7 +99,7 @@ func main() {
 
 ![img](https://upload-images.jianshu.io/upload_images/5015984-367dd717d89ae5db.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp)
 
-<img src="image/image-20220319213118485.png" alt="image-20220319213118485" style="zoom:50%;" />
+![image-20220320153424458](image/image-20220320153424458.png)
 
 go get github.com/streadway/amqp
 
@@ -439,7 +439,7 @@ func main() {
 
 而延时队列利用rabittmq的死信队列实现
 
-<img src="image/image-20220320143936920.png" alt="image-20220320143936920" style="zoom:50%;" />
+![image-20220320153405123](image/image-20220320153405123.png)
 
 ```go
 package main
