@@ -1,0 +1,19 @@
+syntax = "proto3";
+package api;
+option go_package = "./proto;api";
+service Greeter{
+  rpc Hello (HelloRequest) returns (HelloResponse){}
+  rpc Bye (ByeRequest) returns (ByeResponse){}
+}
+message HelloRequest{
+  string name = 1;
+}
+message HelloResponse{
+  string greeting = 1;
+}
+message ByeRequest{
+  string name =1;
+}
+message ByeResponse{
+  string bye=1;
+}
