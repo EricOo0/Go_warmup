@@ -198,11 +198,46 @@ https://blog.csdn.net/liyunlong41/article/details/87932953
 
 # apollo配置管理
 
+可以从可视化的ui上批量配置进程的配置
 
+```go
+package main
+
+import (
+   "fmt"
+   "github.com/apolloconfig/agollo/v4"
+   "github.com/apolloconfig/agollo/v4/env/config"
+)
+
+func main() {
+   c := &config.AppConfig{
+      AppID:         "test",
+      Cluster:       "test-cluster",
+      IP:            "http://localhost:8080",
+      NamespaceName: "test1",
+   }
+
+   client, _ := agollo.StartWithConfig(func() (*config.AppConfig, error) {
+      return c, nil
+   })
+
+   fmt.Println("初始化Apollo配置成功")
+   value := client.GetConfig(c.NamespaceName).GetValue("key")
+   //value, _ := cache.Get("key")
+   fmt.Println(value)
+
+}
+```
 
 # cron 定时任务框架
 
 “github/robfig/cron”
 
 精确到秒的定时任务框架
+
+------
+
+# 调度平台
+
+xxl_job
 

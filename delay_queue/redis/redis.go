@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// 延时队列测试
 func main() {
 	redisCli := redis.NewClient(
 		&redis.Options{
